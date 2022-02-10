@@ -29,7 +29,7 @@ TextView precio;
         obtenerProductoById(convertirid);
     }
    public void  obtenerProductoById(Long id){
-       Call<Producto> call=RetrofitClient.getInstance().getMyApi().obtenerProducto(id);
+       Call<Producto> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().obtenerProducto(id);
        call.enqueue(new Callback<Producto>() {
            @Override
            public void onResponse(Call<Producto> call, Response<Producto> response) {

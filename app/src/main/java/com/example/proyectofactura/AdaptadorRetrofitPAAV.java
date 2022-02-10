@@ -3,10 +3,10 @@ package com.example.proyectofactura;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class AdaptadorRetrofit {
+public class AdaptadorRetrofitPAAV {
     Retrofit retrofit;
 
-    public AdaptadorRetrofit() {
+    public AdaptadorRetrofitPAAV() {
 
     }
     public Retrofit getAdaptador(){
