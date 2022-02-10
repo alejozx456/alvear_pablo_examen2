@@ -80,7 +80,7 @@ public class RegistroPAAV extends AppCompatActivity {
         personaAPAAV.clave=claveregistro;
         personaAPAAV.ced=cedularegistro;
         if(verificarCedulaPAAV(cedularegistro)){
-            // Call <List<ProductoPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getProductos();
+           
             Call<PersonaAPAAV> call=RetrofitClientPAAV.getInstance().getMyApiPAAV().crearPersona(personaAPAAV);
             call.enqueue(new Callback<PersonaAPAAV>() {
                 @Override
