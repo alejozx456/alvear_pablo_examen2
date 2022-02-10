@@ -1,6 +1,6 @@
 package com.example.proyectofactura;
 
-public class Producto {
+public class ProductoPAAV {
 
     Long id;
     String nombre;

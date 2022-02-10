@@ -9,7 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivityDetalleProducto extends AppCompatActivity {
+public class MainActivityDetalleProductoPAAV extends AppCompatActivity {
 TextView idp;
 TextView nombreProducto;
 TextView precio;
@@ -29,16 +29,16 @@ TextView precio;
         obtenerProductoById(convertirid);
     }
    public void  obtenerProductoById(Long id){
-       Call<Producto> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().obtenerProducto(id);
-       call.enqueue(new Callback<Producto>() {
+       Call<ProductoPAAV> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().obtenerProducto(id);
+       call.enqueue(new Callback<ProductoPAAV>() {
            @Override
-           public void onResponse(Call<Producto> call, Response<Producto> response) {
+           public void onResponse(Call<ProductoPAAV> call, Response<ProductoPAAV> response) {
                 nombreProducto.setText(response.body().nombre);
                 precio.setText(String.valueOf(response.body().precio));
            }
 
            @Override
-           public void onFailure(Call<Producto> call, Throwable t) {
+           public void onFailure(Call<ProductoPAAV> call, Throwable t) {
 
            }
        });
