@@ -16,6 +16,7 @@ import retrofit2.Response;
 public class RegistroPAAV extends AppCompatActivity {
 
     public ListView listaUsuarios;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,9 @@ public class RegistroPAAV extends AppCompatActivity {
 
         listaUsuarios=findViewById(R.id.IdListadeUsuariosPAAV);
     }
+
+
+
     public void ObtenerPersonasPAAV(View view){
 
         Call<List<PersonaPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getPersonas();
