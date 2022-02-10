@@ -10,6 +10,7 @@
         android:id="@+id/IdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="EntrarRegistroPAAV"
         android:text="SISTEMA DE FACTURA"
         android:textColor="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,6 +64,7 @@
         android:layout_height="64dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
+        android:onClick="ingresarMain"
         android:text="INGRESAR"
         app:layout_constraintStart_toStartOf="@+id/IdPasswordPersonaPAAV"
         app:layout_constraintTop_toBottomOf="@+id/IdPasswordPersonaPAAV" />

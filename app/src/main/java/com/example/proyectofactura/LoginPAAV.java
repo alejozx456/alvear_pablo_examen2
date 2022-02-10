@@ -19,7 +19,15 @@ EditText password;
         email=findViewById(R.id.IdEmailPersonaPAAV);
         password=findViewById(R.id.IdPasswordPersonaPAAV);
 
+
+
     }
+
+    public boolean verificarPasswordPAAV(String dato){
+        return  dato.matches("^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,16}$"); //Validar contraseña
+    }
+
+
     public void ingresarMain(View view){
         Intent i = new Intent(this,MainActivityPAAV.class);
         startActivity(i);
