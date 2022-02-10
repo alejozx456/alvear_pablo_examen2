@@ -33,7 +33,7 @@ public class RegistroPAAV extends AppCompatActivity {
 
     }
 
-    public void crearPersonaPAAV(){
+    public void crearPersonaPAAV( View view){
         String emailregistro=email.getText().toString();
         String claveregistro=clave.getText().toString();
         String cedularegistro=cedula.getText().toString();
@@ -46,6 +46,9 @@ public class RegistroPAAV extends AppCompatActivity {
         call.enqueue(new Callback<PersonaAPAAV>() {
             @Override
             public void onResponse(Call<PersonaAPAAV> call, Response<PersonaAPAAV> response) {
+                email.setText("");
+                clave.setText("");
+                cedula.setText("");
                
 
             }
