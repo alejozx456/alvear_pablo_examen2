@@ -5,13 +5,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static RetrofitClient instance=null;
-    private Api myApi;
+    private ApiPAAV myApiPAAV;
     private  RetrofitClient(){
         Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(Api.BASE_URL)
+                .baseUrl(ApiPAAV.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        myApi=retrofit.create(Api.class);
+        myApiPAAV =retrofit.create(ApiPAAV.class);
     }
     public static synchronized RetrofitClient getInstance() {
         if (instance == null) {
@@ -19,8 +19,8 @@ public class RetrofitClient {
         }
         return instance;
     }
-    public Api getMyApi() {
-        return myApi;
+    public ApiPAAV getMyApiPAAV() {
+        return myApiPAAV;
     }
 
 }
