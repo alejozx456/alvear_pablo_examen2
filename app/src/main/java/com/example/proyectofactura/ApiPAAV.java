@@ -20,5 +20,5 @@ public interface ApiPAAV {
     Call<List<PersonaPAAV>> getPersonas();
 
     @POST("personas")
-    Call<PersonaPAAV> crearPersona(@Body PersonaPAAV personaPAAV);
+    Call<PersonaAPAAV> crearPersona(@Body PersonaAPAAV  personaAPAAV);
 }
