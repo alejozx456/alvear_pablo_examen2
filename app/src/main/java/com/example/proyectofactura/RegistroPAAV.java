@@ -24,7 +24,7 @@ public class RegistroPAAV extends AppCompatActivity {
         listaUsuarios=findViewById(R.id.IdListadeUsuariosPAAV);
     }
     public void ObtenerPersonasPAAV(View view){
-        //Call<List<ProductoPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getProductos();
+
         Call<List<PersonaPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getPersonas();
         call.enqueue(new Callback<List<PersonaPAAV>>() {
             @Override
