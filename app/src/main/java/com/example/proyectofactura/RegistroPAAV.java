@@ -33,6 +33,44 @@ public class RegistroPAAV extends AppCompatActivity {
 
     }
 
+    public boolean verificarCedulaPAAV(String x){
+        int suma=0;
+        if(x.length()==9){
+
+            return false;
+        }else {
+            int a[] = new int[x.length() / 2];
+            int b[] = new int[(x.length() / 2)];
+            int c = 0;
+            int d = 1;
+            for (int i = 0; i < x.length() / 2; i++) {
+                a[i] = Integer.parseInt(String.valueOf(x.charAt(c)));
+                c = c + 2;
+                if (i < (x.length() / 2) - 1) {
+                    b[i] = Integer.parseInt(String.valueOf(x.charAt(d)));
+                    d = d + 2;
+                }
+            }
+
+            for (int i = 0; i < a.length; i++) {
+                a[i] = a[i] * 2;
+                if (a[i] > 9) {
+                    a[i] = a[i] - 9;
+                }
+                suma = suma + a[i] + b[i];
+            }
+            int aux = suma / 10;
+            int dec = (aux + 1) * 10;
+            if ((dec - suma) == Integer.parseInt(String.valueOf(x.charAt(x.length() - 1))))
+                return true;
+            else if (suma % 10 == 0 && x.charAt(x.length() - 1) == '0') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
     public void crearPersonaPAAV( View view){
         String emailregistro=email.getText().toString();
         String claveregistro=clave.getText().toString();
@@ -41,23 +79,28 @@ public class RegistroPAAV extends AppCompatActivity {
         personaAPAAV.email=emailregistro;
         personaAPAAV.clave=claveregistro;
         personaAPAAV.ced=cedularegistro;
-        // Call <List<ProductoPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getProductos();
-        Call<PersonaAPAAV> call=RetrofitClientPAAV.getInstance().getMyApiPAAV().crearPersona(personaAPAAV);
-        call.enqueue(new Callback<PersonaAPAAV>() {
-            @Override
-            public void onResponse(Call<PersonaAPAAV> call, Response<PersonaAPAAV> response) {
-                email.setText("");
-                clave.setText("");
-                cedula.setText("");
-               
+        if(verificarCedulaPAAV(cedularegistro)){
+            // Call <List<ProductoPAAV>> call= RetrofitClientPAAV.getInstance().getMyApiPAAV().getProductos();
+            Call<PersonaAPAAV> call=RetrofitClientPAAV.getInstance().getMyApiPAAV().crearPersona(personaAPAAV);
+            call.enqueue(new Callback<PersonaAPAAV>() {
+                @Override
+                public void onResponse(Call<PersonaAPAAV> call, Response<PersonaAPAAV> response) {
+                    email.setText("");
+                    clave.setText("");
+                    cedula.setText("");
 
-            }
 
-            @Override
-            public void onFailure(Call<PersonaAPAAV> call, Throwable t) {
+                }
 
-            }
-        });
+                @Override
+                public void onFailure(Call<PersonaAPAAV> call, Throwable t) {
+
+                }
+            });
+        }else {
+            Toast.makeText(this,"Cedula Invalida",Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
@@ -71,7 +114,7 @@ public class RegistroPAAV extends AppCompatActivity {
                 List<PersonaPAAV> personaPAAVS=response.body();
                 String[]numPersonas=new String[personaPAAVS.size()];
                 for (int i = 0; i< personaPAAVS.size(); i++){
-                    numPersonas[i]= personaPAAVS.get(i).getEmail();
+                    numPersonas[i]= personaPAAVS.get(i).getEmail()+" "+personaPAAVS.get(i).getCed();
                 }
                 listaUsuarios.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,numPersonas));
             }
