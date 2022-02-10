@@ -7,7 +7,7 @@
     tools:context=".LoginPAAV">
 
     <TextView
-        android:id="@+id/IdButtonLoginIngresarPAAV"
+        android:id="@+id/IdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SISTEMA DE FACTURA"
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:text="Email"
-        app:layout_constraintStart_toStartOf="@+id/IdButtonLoginIngresarPAAV"
-        app:layout_constraintTop_toBottomOf="@+id/IdButtonLoginIngresarPAAV" />
+        app:layout_constraintStart_toStartOf="@+id/IdText"
+        app:layout_constraintTop_toBottomOf="@+id/IdText" />
 
     <TextView
         android:id="@+id/textView4"
@@ -45,7 +45,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/IdButtonLoginIngresarPAAV" />
+        app:layout_constraintTop_toBottomOf="@+id/IdText" />
 
     <EditText
         android:id="@+id/IdPasswordPersonaPAAV"
@@ -58,12 +58,21 @@
         app:layout_constraintTop_toBottomOf="@+id/IdEmailPersonaPAAV" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/IdButtondLoginIngresarPAAV"
         android:layout_width="133dp"
         android:layout_height="64dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="52dp"
-        android:text="Button"
+        android:layout_marginTop="20dp"
+        android:text="INGRESAR"
         app:layout_constraintStart_toStartOf="@+id/IdPasswordPersonaPAAV"
         app:layout_constraintTop_toBottomOf="@+id/IdPasswordPersonaPAAV" />
+
+    <Button
+        android:id="@+id/IdButtonRegistrarsePAAV"
+        android:layout_width="136dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:text="Registrarse"
+        app:layout_constraintStart_toStartOf="@+id/IdButtondLoginIngresarPAAV"
+        app:layout_constraintTop_toBottomOf="@+id/IdButtondLoginIngresarPAAV" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,15 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFactura">
-        <activity android:name=".LoginPAAV"></activity>
-        <activity android:name=".MainActivityDetalleProductoPAAV" />
-        <activity android:name=".MainActivityPAAV">
+        <activity android:name=".RegistroPAAV"></activity>
+        <activity android:name=".LoginPAAV">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivityDetalleProductoPAAV" />
+        <activity android:name=".MainActivityPAAV"></activity>
     </application>
 
 </manifest>
