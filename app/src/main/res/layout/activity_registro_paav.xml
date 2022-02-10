@@ -11,7 +11,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="email" />
+        android:text="Email" />
 
     <EditText
         android:id="@+id/IdIngresarEmailPAAV"
@@ -27,7 +27,42 @@
         android:layout_height="wrap_content"
         android:text="Password" />
 
+    <EditText
+        android:id="@+id/IdIngresarPasswordPAAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ingrese una clave" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cedula" />
+
+    <EditText
+        android:id="@+id/IdIngresarCedulaPAAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ingrese su Cedula" />
+
+    <Button
+        android:id="@+id/IdButtonRegistrarPAAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar" />
+
+    <Button
+        android:id="@+id/IdButtonRevisarUsuariosPAAV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Revisar Usuarios" />
+
     <ListView
+        android:id="@+id/IdListadeUsuariosPAAV"
         android:layout_width="308dp"
         android:layout_height="655dp">
 
