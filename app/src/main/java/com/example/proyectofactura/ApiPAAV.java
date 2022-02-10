@@ -13,4 +13,7 @@ public interface ApiPAAV {
 
     @GET("productos/{id}")
     Call <ProductoPAAV> obtenerProducto(@Path("id") Long id);
+
+    @GET("personas")
+    Call<List<PersonaPAAV>> getPersonas();
 }
