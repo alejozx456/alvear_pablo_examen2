@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface ApiPAAV {
-    String BASE_URL = "https://facturaheroku.herokuapp.com/api/";
+    String BASE_URL = "https://apiherokuprueba.herokuapp.com/api/";
     @GET("productos")
     Call<List<ProductoPAAV>> getProductos();
 
